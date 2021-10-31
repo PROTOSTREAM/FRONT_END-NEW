@@ -4,10 +4,10 @@
   justify-content: space-between;
   padding: 1rem 3rem;
   font-family: var(--font-pr);
-  width: 100vw;
-  min-width: 100vw;
+  width: 100%;
+  min-width: 100%;
   // background-color: aqua;
-
+  flex-wrap: wrap;
   .navbar-logo {
     user-select: none;
     margin: 4px 4px;
@@ -15,7 +15,13 @@
   .menu-icon {
     display: none;
   }
+  .none {
+    display: none;
+  }
 
+  .nav-btn {
+    display: none;
+  }
   .nav-menu {
     display: flex;
     list-style: none;
@@ -45,6 +51,7 @@
   }
   .buttons {
     .btn {
+      align-self: flex-end;
       background: linear-gradient(
         90.49deg,
         var(--accent-pr) 17.35%,
@@ -70,76 +77,115 @@
   background-color: red;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1080px) {
   .header {
-    // background-color: green;
+    // display: grid;
+    padding: 2%;
     display: flex;
-    position: relative;
-    min-height: fit-content;
-    flex-wrap: wrap;
-    min-width: fit-content;
+    // background-color: azure;
+    // grid-template-columns: 1fr 1fr;
+    // grid-template-rows: 1fr 3fr;
 
-    width: 100%;
-    justify-content: space-between;
-    .logo {
-      margin: 1rem;
-    }
-    .btn {
-      display: none;
+    .logo-div {
+      min-width: 50%;
     }
 
     .menu-icon {
-      display: block;
-      margin-left: 2rem;
-      // background-color: red;
-      position: absolute;
-      left: 10rem;
-      color: white;
+      min-height: 50%;
+      margin-right: 2rem;
+      display: inline-block;
       font-size: 2rem;
-      // left: 20rem;
+
+      text-align: right;
+      color: rgb(255, 255, 255);
+      transition: all 1s ease-in-out;
+    }
+
+    .nav-menu {
+      display: none;
+    }
+    .nav-menu-div {
+      display: block;
+      margin-top: 0.8rem;
+      background-color: var(--comp-pr);
+      border-radius: 10px;
+      min-width: 100%;
+      text-align: center;
+      border-bottom: 2px solid var(--accent-pr);
     }
 
     .mobile-nav {
-      display: inline-block;
-      color: white;
-      position: absolute;
-      top: 2rem;
-      right: 4rem;
-      margin: 2rem;
-      width: 100%;
-      min-width: fit-content;
-      text-align: center;
-      .nav-list {
-        display: flex;
-        flex-direction: column;
-        list-style: none;
-        width: 100%;
-        min-width: fit-content;
-        justify-content: space-around;
-        border-radius: 10px;
-        padding: 1rem;
-        background-color: var(--comp-pr);
-      }
-      .nav-item {
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: all 0.2s ease;
+      list-style: none;
+      border-radius: 10px;
+      padding: 1rem;
+      background-color: var(--comp-pr);
+      display: flex;
+      // transition: all 3s ease-in-out;
+      animation: slidein;
+      animation-duration: 1s;
+      flex-direction: column;
 
+      width: 100%;
+
+      .nav-item {
+        margin: 0.2rem;
+        color: white;
+        background-color: rgb(41, 41, 41);
+        width: 100%;
         .nav-links {
           text-decoration: none;
           color: var(--text-pr);
           font-size: var(--para);
         }
       }
-
-      .nav-item:hover {
-        background: var(--accent-sec) 59.57%;
-      }
     }
 
-    .nav-menu {
+    .nav-btn {
+      margin: 0.2rem;
+      display: inline-block;
+      background: linear-gradient(
+        90.49deg,
+        var(--accent-pr) 17.35%,
+        var(--accent-sec) 59.57%
+      );
+      padding: 0.5rem 2rem;
+      // color: #1d1d1d;
+      color: var(--text-pr);
+      font-size: var(--button);
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.2s ease-in;
+    }
+    .nav-btn:hover {
+      filter: brightness(1.3);
+    }
+
+    .btn {
       display: none;
     }
+  }
+}
+
+@keyframes slidein {
+  0% {
+    opacity: 0.2;
+  }
+
+  20% {
+    opacity: 0.4;
+  }
+
+  40% {
+    opacity: 0.6;
+  }
+
+  60% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

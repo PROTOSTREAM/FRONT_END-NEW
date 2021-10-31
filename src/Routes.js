@@ -10,6 +10,11 @@ import Error404 from './Static/Errorpages/Error404'
 import Error99 from './Static/Errorpages/Error99'
 import Resources from './Static/Resources/Resources'
 import Header from './Components/Header/NavBar'
+import StudentDashboard from './app/dashboard/StudentDashboard'
+import TbiDashboard from "./app/dashboard/TbiDashboard"
+import Register from './app/startups/Register'
+import Cdepartment from './app/startups/CDepartment'
+import Main from './app/startups/Main'
 
 // import Header from "./Components/Header/Header"
 
@@ -32,6 +37,9 @@ const Routes = () => {
                     <Route path="/error_404" exact component={Error404} />
                     <Route path="/error_99" exact component={Error99} />
                     <Route path="/resources" exact component={Resources} />
+                    <Route path="/user-dashboard" component={StudentDashboard} />
+                    <Route path="/admin-dashboard" component={TbiDashboard} />
+                    <Route path="/dev-check" component={Main} />
                 </Switch>
             </div>
         </Router>
