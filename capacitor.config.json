@@ -1,0 +1,12 @@
+{
+  "appId": "io.ionic.protostream",
+  "appName": "protostream",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "build",
+  "server": {
+    "url": "http://protostream.in/",
+    "hostname": "localhost"
+  },
+  "cordova": {}
+}
